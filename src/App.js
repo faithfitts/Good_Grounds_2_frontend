@@ -5,10 +5,20 @@ import { v4 as uuid } from 'uuid'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+
+// import auth components
 import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+
+// import recipe components
+import CreateRecipe from './components/CreateRecipe/CreateRecipe'
+import IndexOneRecipe from './components/IndexOneRecipe/IndexOneRecipe'
+import IndexAllRecipes from './components/IndexAllRecipes/IndexAllRecipes'
+import ShowRecipe from './components/ShowRecipe/ShowRecipe'
+import UpdateRecipe from './components/UpdateRecipe/UpdateRecipe'
+import DeleteRecipe from './components/DeleteRecipe/DeleteRecipe'
 
 class App extends Component {
   constructor (props) {
@@ -54,6 +64,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route path='/sign-up' render={() => (
+            // Auth Routes
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
           <Route path='/sign-in' render={() => (
@@ -64,6 +75,26 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+
+          {/* Recipe Routes */}
+          <AuthenticatedRoute user={user} path='/create-recipe' render={() => (
+            <CreateRecipe msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/recipes' render={() => (
+            <IndexOneRecipe msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/recipes/:id' render={() => (
+            <ShowRecipe msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/recipes/update/:id' render={() => (
+            <UpdateRecipe msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/recipes/delete/:id' render={() => (
+            <DeleteRecipe msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/allrecipes' render={() => (
+            <IndexAllRecipes msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
