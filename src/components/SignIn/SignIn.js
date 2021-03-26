@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
-
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -50,10 +48,10 @@ class SignIn extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
+          <h3 style={{ fontSize: '50px', marginBottom: '30px', color: '#e09f3e' }}>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Email address</Form.Label>
               <Form.Control
                 required
                 type="email"
@@ -64,7 +62,7 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Password</Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -75,7 +73,8 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              style={{ fontWeight: 'bold', marginTop: '30px' }}
+              variant="success"
               type="submit"
             >
               Submit

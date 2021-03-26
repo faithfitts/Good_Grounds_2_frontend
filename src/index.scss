@@ -1,1 +1,35 @@
+$primary: #432818;
+$secondary: #6f1d1b;
+$success: #e09f3e;
+
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
+
+h1 {
+  font-size: 100px;
+  font-family: 'Aladin', cursive;
+  text-align: static;
+  position: static;
+}
+
+h2 {
+  font-size: 40px;
+  font-family: 'Fondamento', cursive;
+}
+
+h3 {
+  font-size: 30px;
+  font-family: 'Aladin', cursive;
+}
+
+body {
+  background: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=mike-kenneally-TD4DBagg2wE-unsplash.jpg') center fixed;
+  background-size: cover;
+  color: white;
+  // text-align: center;
+  font-family: 'Fondamento', cursive;
+  font-size: 27px;
+  // padding: 100px;
+  // margin: 50px;
+}

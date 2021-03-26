@@ -16,12 +16,12 @@ class Recipe extends Component {
     const { recipe, user } = this.props
     const ownerOptions = (
       <Fragment>
-        <div style={{ alignContent: 'flex-end', display: 'flex', justifyContent: 'flex-end' }}>
+        <div style={{ paddingLeft: '2px', alignContent: 'flex-end', display: 'flex', justifyContent: 'flex-end' }}>
           <Link to={`/recipes/update/${recipe.id}`}>
-            <Button variant="primary">Update</Button>
+            <Button style={{ marginRight: '10px' }} variant="primary">Update</Button>
           </Link>
           <Link to={`/recipes/delete/${recipe.id}`}>
-            <Button variant="danger">Delete</Button>
+            <Button variant="secondary">Delete</Button>
           </Link>
         </div>
       </Fragment>
@@ -39,17 +39,23 @@ class Recipe extends Component {
       <Fragment>
         <div className='col-10 mx-auto mt-3'>
           <Card style={{ border: '1px solid' }}>
-            <Card.Header as="h5" style={{ backgroundColor: '#blue' }}>
+            <Card.Header as="h4" style={{ backgroundColor: '#ffe6a7' }}>
               <Link variant="dark" to={`/recipes/${recipe.id}`}>
                 {recipe.name}
               </Link>
             </Card.Header>
-            <Card.Body style={{ backgroundColor: 'blue' }}>
-              <Card.Title>{recipe.description}</Card.Title>
-              <Card.Text>
-                {recipe.method}
-                {recipe.ingredients}
-              </Card.Text>
+
+            <Card.Body style={{ backgroundColor: '#99582a' }}>
+
+              <Card.Title style={{ color: '#e09f3e', fontSize: '25px' }}>Describe Your Creation:</Card.Title>
+              <Card.Text style={{ fontSize: '20px' }}>{recipe.description}</Card.Text>
+
+              <Card.Title style={{ color: '#e09f3e', fontSize: '25px' }}>Ingredients Used:</Card.Title>
+              <Card.Text style={{ fontSize: '20px' }}>{recipe.ingredients}</Card.Text>
+
+              <Card.Title style={{ color: '#e09f3e', fontSize: '25px' }}>How Did You Create It?:</Card.Title>
+              <Card.Text style={{ fontSize: '20px' }}>{recipe.method}</Card.Text>
+
               {ownerCheck()}
             </Card.Body>
           </Card>

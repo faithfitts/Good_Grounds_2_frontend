@@ -49,10 +49,10 @@ class ChangePassword extends Component {
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Change Password</h3>
+          <h3 style={{ fontSize: '50px', marginBottom: '30px', color: '#e09f3e' }}>Change Password</h3>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
-              <Form.Label>Old password</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Old password</Form.Label>
               <Form.Control
                 required
                 name="oldPassword"
@@ -63,7 +63,7 @@ class ChangePassword extends Component {
               />
             </Form.Group>
             <Form.Group controlId="newPassword">
-              <Form.Label>New Password</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>New Password</Form.Label>
               <Form.Control
                 required
                 name="newPassword"
@@ -73,8 +73,8 @@ class ChangePassword extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
+            <Button style={{ fontWeight: 'bold', marginTop: '30px' }}
+              variant="success"
               type="submit"
             >
               Submit

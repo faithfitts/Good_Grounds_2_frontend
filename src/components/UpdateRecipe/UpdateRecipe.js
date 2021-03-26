@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
-
 import { updateRecipe } from '../../api/recipes'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -55,14 +54,14 @@ class UpdateRecipe extends Component {
         return <Redirect to ={'/recipes/'} />
       }
 
-      // update card
+      // update form
       return (
         <div className="row">
           <div className="col-sm-10 col-md-8 mx-auto mt-5">
-            <h3>Update a Recipe</h3>
+            <h3 style={{ fontSize: '50px', marginBottom: '30px', color: '#e09f3e' }}>Update a Recipe!</h3>
             <Form onSubmit={this.handleSubmit}>
               <Form.Group controlId="recipeName">
-                <Form.Label>Name</Form.Label>
+                <Form.Label style= {{ color: '#f6bd60' }}>Name</Form.Label>
                 <Form.Control
                   required
                   name="name"
@@ -72,7 +71,7 @@ class UpdateRecipe extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="recipeDescription">
-                <Form.Label>Description</Form.Label>
+                <Form.Label style= {{ color: '#f6bd60' }}>Description</Form.Label>
                 <Form.Control
                   required
                   as='textarea'
@@ -84,7 +83,7 @@ class UpdateRecipe extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="recipeMethod">
-                <Form.Label>Method</Form.Label>
+                <Form.Label style= {{ color: '#f6bd60' }}>Method</Form.Label>
                 <Form.Control
                   required
                   name="method"
@@ -94,7 +93,7 @@ class UpdateRecipe extends Component {
                 />
               </Form.Group>
               <Form.Group controlId="recipeIngredients">
-                <Form.Label>Ingredients</Form.Label>
+                <Form.Label style= {{ color: '#f6bd60' }}>Ingredients</Form.Label>
                 <Form.Control
                   required
                   as='textarea'
@@ -106,7 +105,7 @@ class UpdateRecipe extends Component {
                 />
               </Form.Group>
               <Button
-                variant="primary"
+                variant="success"
                 type="submit"
               >
                 Update Recipe

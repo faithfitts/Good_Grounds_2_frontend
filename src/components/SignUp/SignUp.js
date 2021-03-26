@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
-
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
@@ -50,13 +48,14 @@ class SignUp extends Component {
   render () {
     const { username, email, password, passwordConfirmation } = this.state
 
+    // sign-up form
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign Up</h3>
+          <h3 style={{ fontSize: '50px', marginBottom: '30px', color: '#e09f3e' }}>Sign Up</h3>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="username">
-              <Form.Label>Username</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Username</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -67,7 +66,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Email address</Form.Label>
               <Form.Control
                 required
                 type="email"
@@ -78,7 +77,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Password</Form.Label>
               <Form.Control
                 required
                 name="password"
@@ -89,7 +88,7 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Form.Group controlId="passwordConfirmation">
-              <Form.Label>Password Confirmation</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Password Confirmation</Form.Label>
               <Form.Control
                 required
                 name="passwordConfirmation"
@@ -100,7 +99,8 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              style={{ fontWeight: 'bold', marginTop: '30px' }}
+              variant="success"
               type="submit"
             >
               Submit

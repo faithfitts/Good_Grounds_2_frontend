@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+import LandingPage from './components/LandingPage/LandingPage'
 
 // import auth components
 import SignUp from './components/SignUp/SignUp'
@@ -63,6 +64,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route user={user} exact path='/' render={() => (
+            <LandingPage user={user} />
+          )} />
           <Route path='/sign-up' render={() => (
             // Auth Routes
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -85,7 +89,7 @@ class App extends Component {
             <IndexOneRecipe msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/recipes/:id' render={() => (
-            <ShowRecipe msgAlert={this.msgAlert} user={user} />
+            <ShowRecipe user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/recipes/update/:id' render={() => (
             <UpdateRecipe msgAlert={this.msgAlert} user={user} />

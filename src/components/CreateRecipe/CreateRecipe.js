@@ -52,13 +52,15 @@ class CreateRecipe extends Component {
     if (createdId) {
       return <Redirect to={`/recipes/${createdId}`}/>
     }
+
+    // create form
     return (
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Create a Recipe</h3>
+          <h3 style= {{ fontSize: '50px', marginBottom: '30px', color: '#e09f3e' }}>Create a Recipe!</h3>
           <Form onSubmit={this.onRecipeCreate}>
             <Form.Group controlId="recipeName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Name</Form.Label>
               <Form.Control
                 required
                 name="name"
@@ -68,7 +70,7 @@ class CreateRecipe extends Component {
               />
             </Form.Group>
             <Form.Group controlId="recipeDescription">
-              <Form.Label>Description</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Description</Form.Label>
               <Form.Control
                 required
                 as='textarea'
@@ -80,7 +82,7 @@ class CreateRecipe extends Component {
               />
             </Form.Group>
             <Form.Group controlId="recipeMethod">
-              <Form.Label>Method</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Method</Form.Label>
               <Form.Control
                 required
                 name="method"
@@ -90,7 +92,7 @@ class CreateRecipe extends Component {
               />
             </Form.Group>
             <Form.Group controlId="recipeIngredients">
-              <Form.Label>Ingredients</Form.Label>
+              <Form.Label style= {{ color: '#f6bd60' }}>Ingredients</Form.Label>
               <Form.Control
                 required
                 as='textarea'
@@ -102,7 +104,7 @@ class CreateRecipe extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant="success"
               type="submit"
             >
               Create Recipe
